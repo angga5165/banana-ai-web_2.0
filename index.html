@@ -1,24 +1,80 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
-  <title>Deteksi Pisang Sehat</title>
+  <title>Banana Quality Control AI</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="container">
-    <h1 class="title">🍌 Deteksi Pisang Sehat & Busuk</h1>
-    <p class="subtitle">
-      Mendukung MBG untuk memastikan konsumsi buah sehat bagi anak-anak
+  <header>
+    <h1>🍌 Banana Quality Control AI</h1>
+    <p>Deteksi Pisang Sehat & Busuk untuk Mendukung MBG</p>
+  </header>
+
+  <section class="info">
+    <h2>🎯 Latar Belakang (MBG)</h2>
+    <p>
+      Model AI ini digunakan sebagai studi kasus Quality Control
+      untuk memastikan pisang yang dikonsumsi anak-anak
+      dalam program Makan Bergizi Gratis (MBG)
+      berada dalam kondisi sehat dan layak konsumsi.
     </p>
+  </section>
+  <section class="app">
+    <h2>📷 Coba Deteksi Pisang</h2>
 
-    <input type="file" id="imageInput" accept="image/*">
-    <button onclick="predict()">Prediksi</button>
+    <div class="detector-box">
+      <!-- Tabs Navigation -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="upload">📂 Upload</button>
+        <button class="tab-btn" data-tab="camera">📷 Kamera</button>
+        <button class="tab-btn" data-tab="paste">📋 Tempel</button>
+      </div>
 
-    <div id="result"></div>
-  </div>
+      <!-- Content: Upload -->
+      <div id="mode-upload" class="tab-content active">
+        <div class="upload-area">
+          <input type="file" id="imageInput" accept="image/*">
+          <p>atau tarik gambar ke sini</p>
+        </div>
+      </div>
 
-  <script src="script.js"></script>
+      <!-- Content: Camera -->
+      <div id="mode-camera" class="tab-content">
+        <div class="camera-wrapper">
+          <video id="video-feed" autoplay playsinline></video>
+          <canvas id="camera-canvas" style="display:none;"></canvas>
+          <button id="captureBtn" class="secondary-btn">📸 Ambil Foto</button>
+        </div>
+      </div>
+
+      <!-- Content: Paste -->
+      <div id="mode-paste" class="tab-content">
+        <div class="paste-area">
+          <p>Tekan <b>Ctrl + V</b> di sini<br>untuk menempel gambar dari clipboard</p>
+        </div>
+      </div>
+
+      <!-- Common Preview -->
+      <div class="preview-container">
+        <img id="preview" style="display:none;">
+        <button id="clearBtn" class="clear-btn" style="display:none;">❌ Ganti Gambar</button>
+      </div>
+
+      <button id="predictBtn">Prediksi</button>
+
+      <div id="result"></div>
+    </div>
+  </section>
+
+  <script type="module" src="script.js"></script>
+
+  <footer>
+    <p>© 2025 | CNN TensorFlow + Keras | Yogi Prayoga</p>
+  </footer>
 </body>
+
 </html>
