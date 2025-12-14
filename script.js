@@ -17,7 +17,7 @@ async function predict() {
 
     try {
       const response = await fetch(
-        "https://yogssss-projek-akhir.hf.space",
+        "https://yogssss-projek-akhir.hf.space/run/predict",
         {
           method: "POST",
           headers: {
