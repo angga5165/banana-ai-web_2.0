@@ -199,59 +199,39 @@ predictBtn.onclick = async () => {
         : "Sebaiknya dibuang, berisiko bagi kesehatan."
     };
 
-    // DATA DARI PPT
-    const qcStatus = isHealthy ? "passed" : "rejected";
-    const qcText = isHealthy ? "LULUS QC" : "DITOLAK";
-    const nutritionInfo = isHealthy
-      ? `<strong>✅ Kualitas Standar MBG</strong>
-           Mengandung Kalium tinggi & Vitamin B6. Sumber energi instan yang higienis untuk pertumbuhan anak.`
-      : `<strong>⚠️ Bahaya Keamanan Pangan</strong>
-           Potensi kontaminasi bakteri & jamur. Kualitas gizi menurun drastis. Tidak memenuhi syarat MBG.`;
-
     resultDiv.innerHTML = `
-      <div class="result-card">
-        <!-- STAMP -->
-        <div class="qc-stamp ${qcStatus}">
-            ${qcText}
-            <span>${isHealthy ? "✔" : "✖"}</span>
-        </div>
+          <div class="result-card">
+            <div class="main-verdict ${statusConfig.className}">
+                <div class="icon">${statusConfig.icon}</div>
+                <div class="text">
+                    <h3>${statusConfig.title}</h3>
+                    <p>${statusConfig.desc}</p>
+                </div>
+            </div>
 
-        <div class="main-verdict ${statusConfig.className}">
-            <div class="icon">${statusConfig.icon}</div>
-            <div class="text">
-                <h3>${statusConfig.title}</h3>
-                <p>${statusConfig.desc}</p>
-            </div>
-        </div>
-
-        <div class="confidence-list">
-            <h4>Analisis AI:</h4>
-            <div class="confidence-item">
-                <div class="bar-label">
-                    <span>🍌 Pisang Sehat</span>
-                    <span>${healthyPercent}%</span>
+            <div class="confidence-list">
+                <h4>Analisis AI:</h4>
+                <div class="confidence-item">
+                    <div class="bar-label">
+                        <span>🍌 Pisang Sehat</span>
+                        <span>${healthyPercent}%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: ${healthyPercent}%; background-color: #10b981;"></div>
+                    </div>
                 </div>
-                <div class="bar-bg">
-                    <div class="bar-fill" style="width: ${healthyPercent}%; background-color: #10b981;"></div>
-                </div>
-            </div>
-            <div class="confidence-item">
-                 <div class="bar-label">
-                    <span>🦠 Pisang Busuk</span>
-                    <span>${rottenPercent}%</span>
-                </div>
-                <div class="bar-bg">
-                    <div class="bar-fill" style="width: ${rottenPercent}%; background-color: #ef4444;"></div>
+                <div class="confidence-item">
+                     <div class="bar-label">
+                        <span>🦠 Pisang Busuk</span>
+                        <span>${rottenPercent}%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: ${rottenPercent}%; background-color: #ef4444;"></div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Nutrition Info Box -->
-            <div class="qc-info">
-               ${nutritionInfo}
-            </div>
-        </div>
-      </div>
-    `;
+          </div>
+        `;
 
   } catch (err) {
     console.error(err);
