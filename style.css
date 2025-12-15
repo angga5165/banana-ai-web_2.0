@@ -43,9 +43,9 @@ header {
 }
 
 .header-title-img {
-  max-width: 90%;
+  max-width: 95%;
   height: auto;
-  max-height: 150px;
+  max-height: 250px;
   object-fit: contain;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease;
