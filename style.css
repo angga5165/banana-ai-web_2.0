@@ -32,7 +32,7 @@ body {
 header {
   background: url('Background Kuning.png') no-repeat center center;
   background-size: cover;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem 1rem 1.5rem;
   text-align: center;
   color: white;
   /* Ensure text remains readable */
