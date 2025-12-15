@@ -199,8 +199,7 @@ predictBtn.onclick = async () => {
     };
 
     // DATA DARI PPT
-    const qcStatus = isHealthy ? "passed" : "rejected";
-    const qcText = isHealthy ? "LULUS QC" : "DITOLAK";
+
     const nutritionInfo = isHealthy
       ? `<strong>✅ Kualitas Standar MBG</strong>
            Mengandung Kalium tinggi & Vitamin B6. Sumber energi instan yang higienis untuk pertumbuhan anak.`
@@ -209,11 +208,7 @@ predictBtn.onclick = async () => {
 
     resultDiv.innerHTML = `
       <div class="result-card">
-        <!-- STAMP -->
-        <div class="qc-stamp ${qcStatus}">
-            ${qcText}
-            <span>${isHealthy ? "✔" : "✖"}</span>
-        </div>
+
 
         <div class="main-verdict ${statusConfig.className}">
             <div class="icon">${statusConfig.icon}</div>
