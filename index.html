@@ -23,52 +23,101 @@
       berada dalam kondisi sehat dan layak konsumsi.
     </p>
   </section>
-  <section class="app">
-    <h2>📷 Coba Deteksi Pisang</h2>
+  <section class="main-content">
+    <div class="main-grid">
 
-    <div class="detector-box">
-      <!-- Tabs Navigation -->
-      <div class="tabs">
-        <button class="tab-btn active" data-tab="upload">📂 Upload</button>
-        <button class="tab-btn" data-tab="camera">📷 Kamera</button>
-        <button class="tab-btn" data-tab="paste">📋 Tempel</button>
-      </div>
+      <!-- LEFT COLUMN: DETECTOR -->
+      <div class="detector-section">
+        <h2>📷 Coba Deteksi Pisang</h2>
+        <div class="detector-box">
+          <!-- Tabs Navigation -->
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="upload">📂 Upload</button>
+            <button class="tab-btn" data-tab="camera">📷 Kamera</button>
+            <button class="tab-btn" data-tab="paste">📋 Tempel</button>
+          </div>
 
-      <!-- Content: Upload -->
-      <div id="mode-upload" class="tab-content active">
-        <div class="upload-area">
-          <input type="file" id="imageInput" accept="image/*">
-          <p>atau tarik gambar ke sini</p>
+          <!-- Content: Upload -->
+          <div id="mode-upload" class="tab-content active">
+            <div class="upload-area">
+              <input type="file" id="imageInput" accept="image/*">
+              <p>atau tarik gambar ke sini</p>
+            </div>
+          </div>
+
+          <!-- Content: Camera -->
+          <div id="mode-camera" class="tab-content">
+            <div class="camera-wrapper">
+              <video id="video-feed" autoplay playsinline></video>
+              <canvas id="camera-canvas" style="display:none;"></canvas>
+              <button id="captureBtn" class="secondary-btn">📸 Ambil Foto</button>
+            </div>
+          </div>
+
+          <!-- Content: Paste -->
+          <div id="mode-paste" class="tab-content">
+            <div class="paste-area">
+              <p>Tekan <b>Ctrl + V</b> di sini<br>untuk menempel gambar dari clipboard</p>
+            </div>
+          </div>
+
+          <!-- Common Preview -->
+          <div class="preview-container">
+            <div class="preview-wrapper">
+              <img id="preview" style="display:none;">
+              <button id="clearBtn" class="clear-btn" style="display:none;">❌ Ganti Gambar</button>
+            </div>
+          </div>
+
+          <button id="predictBtn">Prediksi</button>
+
+          <div id="result"></div>
         </div>
       </div>
 
-      <!-- Content: Camera -->
-      <div id="mode-camera" class="tab-content">
-        <div class="camera-wrapper">
-          <video id="video-feed" autoplay playsinline></video>
-          <canvas id="camera-canvas" style="display:none;"></canvas>
-          <button id="captureBtn" class="secondary-btn">📸 Ambil Foto</button>
+      <!-- RIGHT COLUMN: INFO & TUTORIAL -->
+      <div class="info-section">
+
+        <!-- TOP RIGHT: ALUR PENGGUNAAN -->
+        <div class="info-box flow-box">
+          <h3>🚀 Alur Penggunaan</h3>
+          <div class="flow-steps">
+            <div class="step-item">
+              <div class="step-icon">1</div>
+              <div class="step-text">
+                <strong>Pilih Gambar</strong>
+                <p>Upload file, ambil foto kamera, atau tempel gambar.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-icon">2</div>
+              <div class="step-text">
+                <strong>Klik Prediksi</strong>
+                <p>AI akan memproses gambar dalam hitungan detik.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-icon">3</div>
+              <div class="step-text">
+                <strong>Lihat Hasil</strong>
+                <p>Dapatkan analisis kesehatan & kelayakan konsumsi.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- BOTTOM RIGHT: VIDEO TUTORIAL -->
+        <div class="info-box video-box">
+          <h3>📺 Video Tutorial</h3>
+          <div class="video-placeholder">
+            <p>Video Tutorial Coming Soon</p>
+            <!-- Placeholder for iframe -->
+            <!-- <iframe src="https://www.youtube.com/embed/example" frameborder="0"></iframe> -->
+          </div>
+        </div>
+
       </div>
 
-      <!-- Content: Paste -->
-      <div id="mode-paste" class="tab-content">
-        <div class="paste-area">
-          <p>Tekan <b>Ctrl + V</b> di sini<br>untuk menempel gambar dari clipboard</p>
-        </div>
-      </div>
-
-      <!-- Common Preview -->
-      <div class="preview-container">
-        <div class="preview-wrapper">
-          <img id="preview" style="display:none;">
-          <button id="clearBtn" class="clear-btn" style="display:none;">❌ Ganti Gambar</button>
-        </div>
-      </div>
-
-      <button id="predictBtn">Prediksi</button>
-
-      <div id="result"></div>
     </div>
   </section>
 
