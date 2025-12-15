@@ -118,7 +118,6 @@ document.addEventListener("paste", (e) => {
 });
 
 // --- COMMON PREVIEW LOGIC ---
-// --- COMMON PREVIEW LOGIC ---
 function setPreview(fileOrBlob) {
   currentFile = fileOrBlob;
   previewImg.src = URL.createObjectURL(fileOrBlob);
@@ -259,3 +258,18 @@ predictBtn.onclick = async () => {
   }
 };
 
+// --- VIDEO TUTORIAL LOGIC ---
+const videoOverlay = document.getElementById("videoOverlay");
+const tutorialVideo = document.getElementById("tutorial-video");
+
+if (videoOverlay && tutorialVideo) {
+  videoOverlay.addEventListener("click", () => {
+    videoOverlay.style.display = "none";
+    tutorialVideo.play();
+  });
+
+  tutorialVideo.addEventListener("ended", () => {
+    videoOverlay.style.display = "flex";
+    tutorialVideo.currentTime = 0;
+  });
+}
