@@ -494,6 +494,17 @@ footer {
   color: white;
 }
 
+/* Note Box Styles */
+.note-list {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+  color: #64748b;
+}
+
+.note-list li {
+  margin-bottom: 0.25rem;
+}
+
 /* Responsive Grid */
 @media (max-width: 900px) {
   .main-grid {
