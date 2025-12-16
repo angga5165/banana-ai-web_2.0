@@ -39,6 +39,27 @@ let stream = null;
   }
 })();
 
+// --- DARK MODE LOGIC ---
+const darkModeBtn = document.getElementById("darkModeBtn");
+const body = document.body;
+
+// Check Local Storage
+if (localStorage.getItem("darkMode") === "enabled") {
+  body.classList.add("dark-mode");
+  darkModeBtn.innerText = "☀️";
+}
+
+darkModeBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+
+  // Update Icon
+  darkModeBtn.innerText = isDark ? "☀️" : "🌙";
+
+  // Save Preference
+  localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+});
+
 // --- TAB SWITCHING LOGIC ---
 tabBtns.forEach(btn => {
   btn.addEventListener("click", () => {
