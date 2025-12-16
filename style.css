@@ -206,7 +206,8 @@ section {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgba(239, 68, 68, 0.9);
+  background: rgba(51, 65, 85, 0.9);
+  /* Dark Gray */
   backdrop-filter: blur(4px);
   color: white;
   border: none;
@@ -224,7 +225,8 @@ section {
 
 .clear-btn:hover {
   transform: translateY(-2px);
-  background: #dc2626;
+  background: #1e293b;
+  /* Darker Gray */
 }
 
 @keyframes fadeIn {
